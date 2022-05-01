@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521:XE
+    username: DD_PROJECT
+    password: java
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    hibernate:
+#      ddl-auto: create
+      ddl-auto: update
+    properties:
+      hibernate:
+  # show_sql: true
+      format_sql: true
+  mvc:
+    static-path-pattern: /static/**
+logging.level:
+  org.hibernate.SQL: debug
+# org.hibernate.type: trace
