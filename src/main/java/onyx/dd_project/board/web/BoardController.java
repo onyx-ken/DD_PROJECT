@@ -2,9 +2,12 @@ package onyx.dd_project.board.web;
 
 import lombok.RequiredArgsConstructor;
 import onyx.dd_project.board.domain.Board;
+import onyx.dd_project.board.domain.BoardCategory;
 import onyx.dd_project.board.repository.BoardRepository;
 import onyx.dd_project.board.service.BoardService;
 import onyx.dd_project.boardHistory.service.BoardHistoryService;
+import onyx.dd_project.comment.domain.Comment;
+import onyx.dd_project.comment.repository.CommentRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +31,8 @@ public class BoardController {
 
     private final BoardHistoryService boardHistoryService;
 
+    private final CommentRepository commentRepository;
+
     @GetMapping("/diary/list")
     public String diaryList(Model model) {
 
@@ -46,6 +51,10 @@ public class BoardController {
         Board diaryDetail = findDiary.orElse(null);
 
         boardHistoryService.readBoard(diaryDetail);
+
+        List<Comment> commentList = commentRepository.findAllByBoard(diaryDetail);
+
+        model.addAttribute("commentList", commentList);
 
         model.addAttribute("diaryDetail", diaryDetail);
 

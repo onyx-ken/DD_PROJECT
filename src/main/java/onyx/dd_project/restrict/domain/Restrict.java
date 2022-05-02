@@ -18,11 +18,8 @@ public class Restrict {
     @Column(name = "RESTRICT_ID", nullable = false)
     private Long id;
 
-    @Column(name = "RESTRICT_CTGRY", length = 30)
-    private String category;
-
-    @Column(name = "USER_ID", length = 12)
-    private String userId;
+    @Column(name = "RESTRICT_RULE")
+    private RestrictRule restrictRule;
 
     @Column(name = "IP_ADRES", length = 48)
     private String ipAddress;

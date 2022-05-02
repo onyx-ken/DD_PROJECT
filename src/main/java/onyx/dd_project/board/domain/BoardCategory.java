@@ -1,4 +1,4 @@
-package onyx.dd_project.board.web;
+package onyx.dd_project.board.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

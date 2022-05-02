@@ -1,7 +1,7 @@
 package onyx.dd_project.board.repository;
 
 import onyx.dd_project.board.domain.Board;
-import onyx.dd_project.board.web.BoardCategory;
+import onyx.dd_project.board.domain.BoardCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

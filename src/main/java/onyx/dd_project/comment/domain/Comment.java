@@ -35,6 +35,9 @@ public class Comment extends BaseWriteEntity {
     @Column(name = "COMENT_WRTER", length = 20)
     private String writer;
 
+    @Column(name = "COMENT_PASSWORD", length = 150)
+    private String password;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BOARD_ID")
     @ToString.Exclude

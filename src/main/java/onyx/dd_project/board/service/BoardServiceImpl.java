@@ -3,14 +3,13 @@ package onyx.dd_project.board.service;
 import lombok.RequiredArgsConstructor;
 import onyx.dd_project.board.domain.Board;
 import onyx.dd_project.board.repository.BoardRepository;
-import onyx.dd_project.board.web.BoardCategory;
+import onyx.dd_project.board.domain.BoardCategory;
 import onyx.dd_project.board.web.DiaryAddForm;
 import onyx.dd_project.board.web.DiaryUpdateForm;
 import onyx.dd_project.common.util.IpManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.Optional;
 

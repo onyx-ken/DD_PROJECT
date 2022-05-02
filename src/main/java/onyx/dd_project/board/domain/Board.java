@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import onyx.dd_project.board.web.BoardCategory;
 import onyx.dd_project.common.domain.BaseWriteEntity;
 import org.hibernate.annotations.Type;
 
