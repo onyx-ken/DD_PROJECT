@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import onyx.dd_project.board.domain.Board;
 import onyx.dd_project.board.repository.BoardRepository;
 import onyx.dd_project.board.service.BoardService;
+import onyx.dd_project.boardHistory.service.BoardHistoryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +26,7 @@ public class BoardController {
 
     private final BoardService boardService;
 
-
+    private final BoardHistoryService boardHistoryService;
 
     @GetMapping("/diary/list")
     public String diaryList(Model model) {
@@ -43,6 +44,8 @@ public class BoardController {
         Optional<Board> findDiary = boardRepository.findById(id);
 
         Board diaryDetail = findDiary.orElse(null);
+
+        boardHistoryService.readBoard(diaryDetail);
 
         model.addAttribute("diaryDetail", diaryDetail);
 
@@ -64,7 +67,7 @@ public class BoardController {
 
         Long saveDiaryId = saveDiary.getId();
 
-        return "redirect:/diary/" + saveDiaryId;
+        return "redirect:/board/diary/" + saveDiaryId;
     }
 
     @GetMapping("/diary/update/{id}")
@@ -79,7 +82,14 @@ public class BoardController {
 
         Board updateDiary = boardService.updateDiary(diaryUpdateForm, id);
 
-        return "redirect:/diary/" + updateDiary;
+        return "redirect:/board/diary/" + updateDiary;
     }
 
+    @PostMapping("/diary/delete/{id}")
+    public String deleteDiary(@PathVariable Long id) {
+
+        boardService.deleteDiary(id);
+
+        return "redirect:/board/diary/list";
+    }
 }

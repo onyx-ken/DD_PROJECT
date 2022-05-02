@@ -9,4 +9,5 @@ import javax.servlet.http.HttpServletRequest;
 public interface BoardService {
     Board saveDiary(DiaryAddForm diaryAddForm);
     Board updateDiary(DiaryUpdateForm diaryUpdateForm, Long id);
+    void deleteDiary(Long id);
 }

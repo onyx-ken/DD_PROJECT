@@ -1,5 +1,9 @@
 package onyx.dd_project.boardHistory.domain;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import onyx.dd_project.board.domain.Board;
 import onyx.dd_project.common.idclass.BoardId;
 
@@ -12,6 +16,10 @@ import java.time.LocalDateTime;
         , sequenceName = "BOARD_HISTORY_SEQ"
         , allocationSize = 1
 )
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 @Table(name = "BOARD_HISTORY")
 @IdClass(BoardId.class)
 public class BoardHistory {
@@ -35,9 +43,9 @@ public class BoardHistory {
     private String readIpAddress;
 
     @Column(name = "DAY_COUNT")
-    private Long dayCount;
+    private Long dayCount = 0L;
 
     @Column(name = "DAY_LIKES")
-    private Long dayLikes;
+    private Long dayLikes = 0L;
 
 }

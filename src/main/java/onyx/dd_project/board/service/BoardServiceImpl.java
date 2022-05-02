@@ -62,4 +62,15 @@ public class BoardServiceImpl implements BoardService{
         return updateDiary;
 
     }
+
+    @Transactional
+    @Override
+    public void deleteDiary(Long id) {
+
+        Optional<Board> findDiary = boardRepository.findById(id);
+
+        Board deleteDiary = findDiary.orElse(null);
+
+        deleteDiary.setUseAt(false);
+    }
 }
