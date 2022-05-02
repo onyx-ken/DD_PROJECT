@@ -6,28 +6,18 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.PastOrPresent;
-import java.time.LocalDate;
 
 @Getter
 @Setter
 @NoArgsConstructor
-public class DiaryAddForm {
+public class DiaryUpdateForm {
 
-    @NotEmpty @Length(max = 50)
+    @NotEmpty
+    @Length(max = 50)
     private String subject;
 
     @NotEmpty
     private String content;
-
-    @NotEmpty @Length(max = 12)
-    private String nickName;
-
-    @NotEmpty @Length(max = 16)
-    private String password;
-
-    @PastOrPresent
-    private LocalDate occurredDate;
 
     private Boolean publicAt;
 

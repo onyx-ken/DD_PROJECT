@@ -56,10 +56,10 @@ public class Board extends BaseWriteEntity {
     private Boolean adultAt;
 
     @Column(name = "BOARD_COUNT")
-    private Long count;
+    private Long count = 0L;
 
     @Column(name = "BOARD_LIKES")
-    private Long likes;
+    private Long likes = 0L;
 
     @Column(name = "OCCRRNC_DT")
     private LocalDate occurredDate;

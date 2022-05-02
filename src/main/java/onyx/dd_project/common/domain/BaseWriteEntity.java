@@ -21,7 +21,7 @@ public abstract class BaseWriteEntity {
 
     @Type(type="yes_no")
     @Column(name = "USE_AT")
-    private Boolean useAt;
+    private Boolean useAt = true;
 
     @Column(name = "WRITNG_IP_ADRES", length = 40)
     private String WriteIpAddress;
