@@ -22,7 +22,7 @@ public class VisitorServiceImpl implements VisitorService{
 
     @Transactional
     @Override
-    public void saveVisitorAndHistory() {
+    public Optional<Visitor> saveVisitor() {
 
         String ip = ipManager.getIp();
 
@@ -30,16 +30,23 @@ public class VisitorServiceImpl implements VisitorService{
 
         if(findVisitor.isPresent()) {
 
-            return;
+            return Optional.empty();
         }
 
         Visitor visitor = new Visitor();
 
         visitor.setIpAddress(ip);
 
-        Visitor newVisitor = visitorRepository.save(visitor);
+        return Optional.of(visitorRepository.save(visitor));
 
-        visitHistoryService.saveVisitHistory(newVisitor);
+    }
+
+    @Transactional
+    @Override
+    public void saveVisitorAndHistory() {
+
+        Optional<Visitor> visitor = saveVisitor();
+        visitor.ifPresent(visitHistoryService::saveVisitHistory);
 
     }
 }

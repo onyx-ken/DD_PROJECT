@@ -27,14 +27,10 @@ public class VisitHistory {
     @Column(name = "VISIT_HISTORY_ID", nullable = false)
     private Long id;
 
-    @Column(name = "DAY_COUNT")
-    private Long dayCount;
-
     @Column(name = "VISIT_HISTORY_DAY")
     private LocalDateTime historyDate;
 
-    @Lob
-    @Column(name = "VISITOR_LIST")
-    private String visitor;
+    @Column(name = "VISITOR_IP", length = 48)
+    private String ipAddress;
 
 }

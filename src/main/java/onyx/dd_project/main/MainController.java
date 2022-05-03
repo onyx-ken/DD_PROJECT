@@ -13,9 +13,7 @@ public class MainController {
 
     @GetMapping()
     public String main() {
-
         visitorService.saveVisitorAndHistory();
-
 
         return "index";
     }
