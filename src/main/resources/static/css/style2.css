@@ -1,0 +1,263 @@
+@import "reset.css";
+
+/* Common CSS*/
+
+.inner {
+    width: 1300px;
+    margin: auto;
+}
+
+/* Intro */
+.main {
+    display: flex;
+}
+
+.intro {
+    height: 100vh;
+    display: flex;
+}
+.diary-wrap {
+    background-color: #121212;
+}
+
+/* BG Video */
+
+video {
+    min-width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+.video-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Header */
+header {
+    background-color: #fbc02d;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Search */
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+}
+
+.item {
+    width: 300px;
+    position: relative;
+
+}
+
+.item input[type=text] {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    height: 40px;
+    width: inherit;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 40px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.item .fa-solid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: gray;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    transition: 0.3s;
+}
+
+.item input:focus {
+    border: 1px solid dodgerblue;
+    box-shadow: 0 0 5px dodgerblue;
+}
+
+.item input:focus + .fa-solid {
+    color: dodgerblue;
+}
+
+.item input:focus::placeholder {
+    visibility: hidden;
+}
+
+input[id=trigger] {
+    display: none;
+}
+
+label[for=trigger] {
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+label[for=trigger] span {
+    height: 2px;
+    background-color: #000;
+    width: 100%;
+    transition: 0.5s;
+}
+
+input[id=trigger]:checked + label[for=trigger] span:nth-child(1) {
+    margin-top: 13px;
+    transform: rotate(45deg);
+}
+
+input[id=trigger]:checked + label[for=trigger] span:nth-child(2) {
+    opacity: 0;
+}
+
+input[id=trigger]:checked + label[for=trigger] span:nth-child(3) {
+    margin-bottom: 13px;
+    transform: rotate(-45deg);
+}
+
+input[id=trigger]:checked ~ .menu {
+    right: 0;
+}
+
+input[id=trigger]:checked + label[for=trigger] {
+    margin-right: 310px;
+}
+
+.menu-bar {
+
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #484848;
+    position: fixed;
+    top: 0;
+    right: -1000px;
+    height: 100vh;
+    width: 30vw;
+    padding-top: 80px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.17);
+    transition: 0.8s;
+}
+
+.menu li {
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu li:before {
+    content: "\f699";
+    font-family: "Font Awesome 6 Free";
+    font-size: 2em;
+    color: #fbc02d;
+
+}
+
+.menu li a {
+    margin: 0;
+    padding: 10px;
+    font-size: 2em;
+    color: white;
+    position: relative;
+}
+
+.menu li a:before {
+    content: '';
+    position: absolute;
+    background-color: #fbc02d;
+    height: 2px;
+    width: 5px;
+    bottom: 0px;
+    transition: 0.3s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu li a:hover:before {
+    width: 100%;
+}
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.info p {
+    margin-bottom: 20px;
+    margin-left: 15px;
+    color: white;
+    display: inline;
+
+}
+
+.info i {
+    color: #fbc02d;
+}
+
+/* diary-wrap */
+
+.diary-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.diary-best {
+
+}
+
+.diary {
+    flex: 1;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.diary article {
+
+}
+.diary article a{
+    border: 1px solid crimson;
+    box-sizing: border-box;
+    width: 390px;
+    height: 400px;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.style2 {
+
+}
+

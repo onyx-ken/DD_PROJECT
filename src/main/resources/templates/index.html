@@ -2,24 +2,45 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Hello</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../static/css/solid.min.css">
 </head>
 <body>
 <header>
+    <form class="search">
+        <div class="item">
+            <input type="text" placeholder="검색어">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </form>
     <div class="search-bar">
-        <p>검색용</p>
-        <nav>
+        <input type="checkbox" id="trigger">
+        <label for="trigger">
+            <span> </span>
+            <span> </span>
+            <span> </span>
+        </label>
+        <div class="sidebar">
 
-        </nav>
+            <div class="inner">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="index.html">홈</a></li>
+                        <li><a href="index.html">글쓰기</a></li>
+                        <li><a href="index.html">About This Site</a></li>
+                    </ul>
+                </nav>
+                <p>오늘방문</p>
+            </div>
+
+        </div>
     </div>
-
 </header>
 
 
-
-Hello
-<a href="/hello">hello</a>
+<script src="../static/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+@import "reset.css";
+
+body {
+    display: flex;  /* html의 요소의 가장 상위 부모는 body이므로, 여기에서 flex를 선언하여 자식요소인 container를 컨트롤 함*/
+    justify-content: center; /* 자식요소를 가운데 정렬시킴(container) */
+}
+.container {
+    border: 1px solid black;
+    width: 1200px; /* 크기 사이즈 고정*/
+}
+header {
+    background-color: peachpuff;
+    text-align: center; /* 내부 글자 가운데 정렬 */
+}
+section {
+    display: flex; /* 자식 요소를 flex로 컨트롤 (article 요소 3개)*/
+}
+article {
+    height: 250px;
+    display: flex; /* 자식 요소를 flex로 컨트롤 (텍스트) */
+    justify-content: center; /* 텍스트 수평 정렬 */
+    align-items: center; /* 텍스트 수직 정렬 */
+}
+.left {
+    background-color: slateblue;
+    flex: 1; /* article의 형제요소 3개 중 비율로 1을 차지 함*/
+}
+.main {
+    background-color: coral;
+    flex: 3; /* article의 형제요소 3개 중 비율로 3을 차지 함*/
+}
+.right {
+    background-color: yellow;
+    flex: 1; /* article의 형제요소 3개 중 비율로 1을 차지 함*/
+}
+footer {
+    background-color: crimson;
+    text-align: center; /* 내부 글자 가운데 정렬 */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+    section {
+        flex-direction: column;
+    }
+    .left {
+        order: 2;
+    }
+    .main {
+        order: 1;
+    }
+    .right {
+        order: 3;
+    }
+}
