@@ -249,8 +249,8 @@ input[id=trigger]:checked + label[for=trigger] {
 
 
 .diary article {
-    width: 340px;
-    height: 350px;
+    width: 350px;
+    height: 370px;
     position: relative;
     display: flex;
     align-items: center;
@@ -308,7 +308,7 @@ input[id=trigger]:checked + label[for=trigger] {
     width: 390px;
     height: 400px;
     margin: 20px 20px;
-    padding: 30px 30px;
+    padding: 50px 50px;
     flex-direction: column;
 }
 
@@ -328,4 +328,9 @@ input[id=trigger]:checked + label[for=trigger] {
 .content-info {
     flex: 1;
     justify-self: end;
+}
+
+footer {
+    height: 80px;
+    background-color: #484848;
 }
