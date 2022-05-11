@@ -17,22 +17,41 @@
     display: flex;
 }
 
-.diary-wrap {
-    background-color: #121212;
-}
-
 /* BG Video */
 
-video {
+.video {
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.video video{
     min-width: 100%;
     min-height: 100vh;
     object-fit: cover;
     z-index: -1;
 }
 
-.video-logo img {
-    width: 50px;
-    height: 50px;
+.video img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: calc(48%);
+    left: calc(55%);
+}
+
+.video p {
+    position: absolute;
+    top: calc(66%);
+    left: calc(47%);
+    font-family: 'Bangers', cursive;
+    color: white;
+    font-size: 25px;
+}
+
+.diary-wrap {
+    background-color: #121212;
 }
 
 /* Header */
@@ -62,10 +81,23 @@ nav {
     height: 3vh;
 }
 
+.search a {
+    margin-left: 70px;
+    font-family: 'Single Day', cursive;
+    color: #121212;
+    font-size: 25px;
+}
+
+.search a:hover {
+    color: #0056b3;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
 .item {
     width: 300px;
     position: relative;
-
+    display: flex;
 }
 
 .item input[type=text] {
@@ -148,10 +180,6 @@ input[id=trigger]:checked ~ .menu {
 
 input[id=trigger]:checked + label[for=trigger] {
     margin-right: 310px;
-}
-
-.menu-bar {
-
 }
 
 .menu {
