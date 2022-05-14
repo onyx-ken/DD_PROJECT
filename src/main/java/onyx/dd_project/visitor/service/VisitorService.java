@@ -6,5 +6,6 @@ import java.util.Optional;
 
 public interface VisitorService {
     Optional<Visitor> saveVisitor();
-    public void saveVisitorAndHistory();
+    void saveVisitorAndHistory();
+    void deleteAllTodayVisitor();
 }

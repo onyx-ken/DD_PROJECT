@@ -49,4 +49,10 @@ public class VisitorServiceImpl implements VisitorService{
         visitor.ifPresent(visitHistoryService::saveVisitHistory);
 
     }
+
+    @Transactional
+    @Override
+    public void deleteAllTodayVisitor() {
+        visitorRepository.truncateVisitorTable();
+    }
 }

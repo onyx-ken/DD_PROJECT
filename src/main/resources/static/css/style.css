@@ -90,8 +90,7 @@ nav {
 
 .search a:hover {
     color: #0056b3;
-    opacity: 0.8;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 .item {
@@ -245,16 +244,17 @@ input[id=trigger]:checked + label[for=trigger] {
     justify-content: start;
 }
 
-.info p {
+.visitor {
     margin-bottom: 20px;
     margin-left: 15px;
     color: white;
-    display: inline;
+    display: flex;
     font-family: 'Single Day', cursive;
 }
 
-.info i {
+.visitor i{
     color: #fbc02d;
+    margin-right: 10px;
 }
 
 /* diary-wrap */

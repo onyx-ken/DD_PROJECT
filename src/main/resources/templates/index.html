@@ -5,42 +5,207 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/css/fontawesome.min.css">
     <link rel="stylesheet" href="../static/css/solid.min.css">
+    <link rel="stylesheet" href="../static/css/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Stylish&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <form class="search">
-        <div class="item">
-            <input type="text" placeholder="검색어">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-    </form>
-    <div class="search-bar">
-        <input type="checkbox" id="trigger">
-        <label for="trigger">
-            <span> </span>
-            <span> </span>
-            <span> </span>
-        </label>
-        <div class="sidebar">
 
-            <div class="inner">
-                <nav>
-                    <ul class="menu">
+<div class="container">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#none"><img src="../static/images/logo.png"></a>
+            </div>
+            <form class="search">
+                <div class="item">
+                    <input type="text" placeholder="검색어">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="write">
+                    <a href="#none">글쓰기</a>
+                </div>
+
+            </form>
+            <div class="menu-bar">
+                <input type="checkbox" id="trigger">
+                <label for="trigger">
+                    <span> </span>
+                    <span> </span>
+                    <span> </span>
+                </label>
+                <div class="menu">
+                    <ul>
                         <li><a href="index.html">홈</a></li>
                         <li><a href="index.html">글쓰기</a></li>
+                        <li><a href="index.html">로그인/회원가입</a></li>
                         <li><a href="index.html">About This Site</a></li>
                     </ul>
-                </nav>
-                <p>오늘방문</p>
+                    <div class="info">
+                        <div class="visitor">
+                            <i class="fa-solid fa-user fa-fw"></i>
+                            <p th:text="|오늘 방문자 ${TodayVisitedUser} 명|">오늘 방문자 0 명</p>
+                        </div>
+                        <div class="visitor">
+                            <i class="fa-solid fa-users fa-fw"></i>
+                            <p th:text="|총 방문자 ${allVisitedUser} 명|">총 방문자 0 명</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="video">
+                <video src="../static/images/moon.mp4" autoplay muted loop poster="../static/images/moon_Moment.jpg"></video>
+                <img src="../static/images/back-logo.png">
+                <p>Don't leave your dreams on the pillow</p>
             </div>
 
-        </div>
-    </div>
-</header>
-
-
+        </section>
+        <section class="diary-wrap">
+            <div class="inner">
+                <div class="diary">
+                    <a class="diary-link" href="#none">
+                        <article>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div class="content">
+                                <div class="user-info">
+                                    <img class="user-pic" src="../static/images/avatar.png">
+                                    <p>들고양이</p>
+                                </div>
+                                <div class=subject>
+                                    <p>들어 놀이 영락과 자신과 끓는다. 인간의 동력은 대한 밥을 뜨고, 별과 밝은 끓는다. 이상은 있음으로써 무한한 앞이 보이는 어디 사람은
+                                        있다.</p>
+                                </div>
+                                <div class="content-info">
+                                    <p><i class="fa-solid fa-heart"></i>13</p>
+                                    <p><i class="fa-solid fa-calendar"></i>05-8</p>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="diary-link" href="#none">
+                        <article>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div class="content">
+                                <div class="user-info">
+                                    <img class="user-pic" src="../static/images/avatar2.png">
+                                    <p>Loren</p>
+                                </div>
+                                <div class=subject>
+                                    <p>뜨거운지라, 대한 품으며, 것이다. 가진 끓는 인생의 그들에게 많이 내려온 동력은 보이는 열락의 약동하다. 열락의 못하다 소담스러운 구할 없으면
+                                        새 불어 인간에 뜨고, 그리하였는가?</p>
+                                </div>
+                                <div class="content-info">
+                                    <p><i class="fa-solid fa-heart"></i>0</p>
+                                    <p><i class="fa-solid fa-calendar"></i>05-5</p>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="diary-link" href="#none">
+                        <article>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div class="content">
+                                <div class="user-info">
+                                    <img class="user-pic" src="../static/images/avatar3.png">
+                                    <p>mizel</p>
+                                </div>
+                                <div class=subject>
+                                    <p>마디씩 이름과, 토끼, 슬퍼하는 마리아 책상을 오면 있습니다. 아침이 하나에 멀리 경, 풀이 가을로 애기 책상을 시인의 봅니다.</p>
+                                </div>
+                                <div class="content-info">
+                                    <p><i class="fa-solid fa-heart"></i>21</p>
+                                    <p><i class="fa-solid fa-calendar"></i>05-5</p>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="diary-link" href="#none">
+                        <article>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div class="content">
+                                <div class="user-info">
+                                    <img class="user-pic" src="../static/images/avatar4.png">
+                                    <p>kazuya-001</p>
+                                </div>
+                                <div class=subject>
+                                    <p>들어 놀이 영락과 자신과 끓는다. 인간의 동력은 대한 밥을 뜨고, 별과 밝은 끓는다. 이상은 있음으로써 무한한 앞이 보이는 어디 사람은
+                                        있다.</p>
+                                </div>
+                                <div class="content-info">
+                                    <p><i class="fa-solid fa-heart"></i>5</p>
+                                    <p><i class="fa-solid fa-calendar"></i>05-2</p>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="diary-link" href="#none">
+                        <article>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div class="content">
+                                <div class="user-info">
+                                    <img class="user-pic" src="../static/images/avatar4.png">
+                                    <p>kazuya-001</p>
+                                </div>
+                                <div class=subject>
+                                    <p>이름자를 같이 까닭이요, 별이 별들을 멀리 계십니다. 아름다운 별 걱정도 멀리 계십니다. 다 멀리 벌써 사람들의 별 듯합니다.</p>
+                                </div>
+                                <div class="content-info">
+                                    <p><i class="fa-solid fa-heart"></i>2</p>
+                                    <p><i class="fa-solid fa-calendar"></i>05-1</p>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="diary-link" href="#none">
+                        <article>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div class="content">
+                                <div class="user-info">
+                                    <img class="user-pic" src="../static/images/avatar5.png">
+                                    <p>diana</p>
+                                </div>
+                                <div class=subject>
+                                    <p>어디 이상, 용감하고 봄날의 있음으로써 이것이야말로 모래뿐일 방황하여도, 약동하다. 피어나기 타오르고 바이며, 이것이다.</p>
+                                </div>
+                                <div class="content-info">
+                                    <p><i class="fa-solid fa-heart"></i>20</p>
+                                    <p><i class="fa-solid fa-calendar"></i>05-2</p>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>DreamDiaryPro@gmail.com</p>
+        <p>Made By Onyx</p>
+    </footer>
+</div>
 <script src="../static/js/main.js"></script>
 </body>
 </html>
