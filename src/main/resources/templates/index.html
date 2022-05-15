@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <script src="../static/js/ckeditor/ckeditor.js"></script>
+    <script src="../static/js/ckeditor/ko.js"></script>
 </head>
 <body>
 
@@ -30,7 +33,7 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div class="write">
-                    <a href="#none">글쓰기</a>
+                    <a href="#none" class="write-modal">글쓰기</a>
                 </div>
 
             </form>
@@ -44,7 +47,7 @@
                 <div class="menu">
                     <ul>
                         <li><a href="index.html">홈</a></li>
-                        <li><a href="index.html">글쓰기</a></li>
+                        <li><a href="#none" class="write-modal">글쓰기</a></li>
                         <li><a href="index.html">로그인/회원가입</a></li>
                         <li><a href="index.html">About This Site</a></li>
                     </ul>
@@ -62,14 +65,36 @@
             </div>
         </nav>
     </header>
+    <section class="modal">
+        <article>
+            <div class="name-pass">
+                <label for="nickName"><input type="text" id="nickName" name="nickName" placeholder="닉네임"></label>
+                <label for="password"><input type="password" id="password" name="password" placeholder="비밀번호"></label>
+                <button class="x-mark" id="x-mark" href="#none"><i class="fa-solid fa-x"></i></button>
+            </div>
+            <br>
+            <label for="subject"><input type="text" id="subject" name="subject" placeholder="글제목"></label>
+            <br>
+            <div id="ckWrite">
+
+                <p>This is some sample content.</p>
+            </div>
+            <div class="buttons">
+                <button>임시저장</button>
+                <button>등록</button>
+                <button class="x-mark">닫기</button>
+            </div>
+
+        </article>
+    </section>
     <main>
         <section class="intro">
             <div class="video">
-                <video src="../static/images/moon.mp4" autoplay muted loop poster="../static/images/moon_Moment.jpg"></video>
+                <video src="../static/images/moon.mp4" autoplay muted loop
+                       poster="../static/images/moon_Moment.jpg"></video>
                 <img src="../static/images/back-logo.png">
                 <p>Don't leave your dreams on the pillow</p>
             </div>
-
         </section>
         <section class="diary-wrap">
             <div class="inner">
@@ -207,5 +232,32 @@
     </footer>
 </div>
 <script src="../static/js/main.js"></script>
+<script>
+    const modalWindow = document.querySelector('.modal');
+
+    ClassicEditor.create(document.querySelector('#ckWrite'), {
+        language: 'ko' //언어설정
+    })
+        .catch(error => {
+            console.error(error);
+        });
+
+    document.querySelectorAll('.x-mark').forEach((x) => {
+        x.addEventListener('click', () => {
+
+            modalWindow.style.display = 'none';
+        });
+    });
+
+
+    document.querySelectorAll('.write-modal').forEach((x) => {
+        x.addEventListener('click', () => {
+
+            modalWindow.style.display = 'block';
+        });
+    });
+
+
+</script>
 </body>
 </html>
