@@ -48,11 +48,10 @@ public class Board extends BaseWriteEntity {
 
     @Type(type="yes_no")
     @Column(name = "PULBIC_AT")
-    private Boolean publicAt;
+    private Boolean publicAt = true;;
 
-    @Type(type="yes_no")
-    @Column(name = "ADULT_AT")
-    private Boolean adultAt;
+    @Column(name = "BOARD_STATUS")
+    private BoardStatus boardStatus;
 
     @Column(name = "BOARD_COUNT")
     private Long count = 0L;

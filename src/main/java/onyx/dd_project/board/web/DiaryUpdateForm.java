@@ -21,6 +21,4 @@ public class DiaryUpdateForm {
 
     private Boolean publicAt;
 
-    private Boolean adultAt;
-
 }

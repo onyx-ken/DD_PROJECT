@@ -18,6 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
     <script src="../static/js/ckeditor/ckeditor.js"></script>
     <script src="../static/js/ckeditor/ko.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="../static/js/lightpick.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/lightpick.css">
 </head>
 <body>
 
@@ -68,8 +71,9 @@
     <section class="modal">
         <article>
             <div class="name-pass">
-                <label for="nickName"><input type="text" id="nickName" name="nickName" placeholder="닉네임"></label>
-                <label for="password"><input type="password" id="password" name="password" placeholder="비밀번호"></label>
+                <label for="nickName"><input type="text" id="nickName" name="nickName" placeholder="닉네임"/></label>
+                <label for="password"><input type="password" id="password" name="password" placeholder="비밀번호"/></label>
+                <label for="occurredDate"><input type="text" id="occurredDate" placeholder="꿈꾼날"/></label>
                 <button class="x-mark" id="x-mark" href="#none"><i class="fa-solid fa-x"></i></button>
             </div>
             <br>
@@ -79,6 +83,7 @@
 
                 <p>This is some sample content.</p>
             </div>
+
             <div class="buttons">
                 <button>임시저장</button>
                 <button>등록</button>
@@ -249,7 +254,6 @@
         });
     });
 
-
     document.querySelectorAll('.write-modal').forEach((x) => {
         x.addEventListener('click', () => {
 
@@ -257,6 +261,12 @@
         });
     });
 
+    const picker = new Lightpick({
+        field: document.getElementById('occurredDate'),
+        onSelect: function(date){
+            document.getElementById('occurredDate').innerHTML = date.format('YYYY-MM-DD');
+        }
+    });
 
 </script>
 </body>

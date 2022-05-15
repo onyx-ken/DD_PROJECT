@@ -2,6 +2,7 @@ package onyx.dd_project.board.service;
 
 import lombok.RequiredArgsConstructor;
 import onyx.dd_project.board.domain.Board;
+import onyx.dd_project.board.domain.BoardStatus;
 import onyx.dd_project.board.repository.BoardRepository;
 import onyx.dd_project.board.domain.BoardCategory;
 import onyx.dd_project.board.web.DiaryAddForm;
@@ -29,19 +30,16 @@ public class BoardServiceImpl implements BoardService{
         Board diary = new Board();
 
         diary.setCategory(BoardCategory.DIARY);
+        diary.setBoardStatus(BoardStatus.COM);
         diary.setSubject(diaryAddForm.getSubject());
         diary.setContent(diaryAddForm.getContent());
         diary.setNickName(diaryAddForm.getNickName());
         diary.setPassword(diaryAddForm.getPassword());
-        diary.setPublicAt(diaryAddForm.getPublicAt());
-        diary.setAdultAt(diaryAddForm.getAdultAt());
         diary.setOccurredDate(diaryAddForm.getOccurredDate());
         diary.setWriteDate(LocalDateTime.now());
         diary.setWriteIpAddress(ipManager.getIp());
 
-        Board savedBoard = boardRepository.save(diary);
-
-        return savedBoard;
+        return boardRepository.save(diary);
 
     }
 
@@ -56,7 +54,6 @@ public class BoardServiceImpl implements BoardService{
         updateDiary.setSubject(diaryUpdateForm.getSubject());
         updateDiary.setContent(diaryUpdateForm.getContent());
         updateDiary.setPublicAt( diaryUpdateForm.getPublicAt());
-        updateDiary.setAdultAt(diaryUpdateForm.getAdultAt());
 
         return updateDiary;
 
