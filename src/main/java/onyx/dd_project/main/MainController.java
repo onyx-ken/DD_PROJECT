@@ -1,6 +1,7 @@
 package onyx.dd_project.main;
 
 import lombok.RequiredArgsConstructor;
+import onyx.dd_project.board.web.DiaryAddForm;
 import onyx.dd_project.visitor.domain.Visitor;
 import onyx.dd_project.visitor.repository.VisitHistoryRepository;
 import onyx.dd_project.visitor.repository.VisitorRepository;
@@ -33,6 +34,8 @@ public class MainController {
         model.addAttribute("allVisitedUser", allVisitedUser);
 
         model.addAttribute("TodayVisitedUser", TodayVisitedUser);
+
+        model.addAttribute("writeForm", new DiaryAddForm());
 
         return "index";
     }
