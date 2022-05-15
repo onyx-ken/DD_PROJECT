@@ -433,8 +433,8 @@ footer p{
 .ck.ck-editor {
 }
 .ck-editor__editable {
-    max-height: 600px;
-    min-height: 600px;
+    max-height: 550px;
+    min-height: 550px;
 }
 
 /* modal*/
@@ -456,6 +456,7 @@ footer p{
     font-family: 'Gaegu', cursive;
     font-size: 1.2em;
     margin-right: 20px;
+    text-align: center;
 }
 
 #x-mark {
@@ -472,24 +473,10 @@ footer p{
     color: dodgerblue;
 }
 
-
-
 #subject {
     width: 100%;
 }
 
-.item .fa-solid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: gray;
-    font-size: 20px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    transition: 0.3s;
-}
 
 .modal input:focus {
     border: 1px solid #198cf0;
@@ -522,6 +509,6 @@ footer p{
 
 .buttons button:hover{
     color: white;
-    background: linear-gradient(-45deg, #333131 50%, crimson);
+    background: linear-gradient(-45deg, #333131 50%, #b40c2f);
     transition: 0.5s;
 }
