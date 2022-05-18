@@ -385,7 +385,7 @@ input[id=trigger]:checked + label[for=trigger] {
 
 .content-info p {
     display: inline;
-    margin-left: 15px;
+    margin-left: 5px;
     font-family: 'Noto Sans KR', sans-serif;
 
 }

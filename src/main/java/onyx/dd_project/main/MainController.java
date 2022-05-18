@@ -1,6 +1,9 @@
 package onyx.dd_project.main;
 
 import lombok.RequiredArgsConstructor;
+import onyx.dd_project.board.domain.Board;
+import onyx.dd_project.board.domain.BoardCategory;
+import onyx.dd_project.board.repository.BoardRepository;
 import onyx.dd_project.board.web.DiaryAddForm;
 import onyx.dd_project.visitor.domain.Visitor;
 import onyx.dd_project.visitor.repository.VisitHistoryRepository;
@@ -22,6 +25,8 @@ public class MainController {
 
     private final VisitorRepository visitorRepository;
 
+    private final BoardRepository boardRepository;
+
     @GetMapping()
     public String main(Model model) {
 
@@ -36,6 +41,12 @@ public class MainController {
         model.addAttribute("TodayVisitedUser", TodayVisitedUser);
 
         model.addAttribute("writeForm", new DiaryAddForm());
+
+        // diary List show
+
+        List<Board> diaryList = boardRepository.findAllByCategory(BoardCategory.DIARY);
+
+        model.addAttribute("diaryList", diaryList);
 
         return "index";
     }
