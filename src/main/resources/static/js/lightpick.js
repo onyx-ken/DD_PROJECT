@@ -30,7 +30,7 @@
         firstDay: 1,
         parentEl: 'body',
         lang: 'auto',
-        format: 'MM-DD',
+        format: 'YYYY-MM-DD',
         separator: ' - ',
         numberOfMonths: 1,
         numberOfColumns: 2,

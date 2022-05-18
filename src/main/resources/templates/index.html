@@ -250,6 +250,15 @@
 
         document.querySelector('#content').value = theEditor.getData();
 
+        modalWindow.style.display = 'none';
+
+        const form = document.querySelector('#writeForm');
+
+        form.method = "post"
+        form.action = "/board/diary/add"
+
+        form.submit();
+
     });
 
 </script>
