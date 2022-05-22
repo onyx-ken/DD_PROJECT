@@ -42,6 +42,8 @@ public class MainController {
 
         model.addAttribute("writeForm", new DiaryAddForm());
 
+        model.addAttribute("diaryDetail", new Board());
+
         // diary List show
 
         List<Board> diaryList = boardRepository.findAllByCategory(BoardCategory.DIARY);

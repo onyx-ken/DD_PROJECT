@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Hello</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -94,7 +94,14 @@
                     <button class="x-mark">닫기</button>
                 </div>
             </form>
-
+        </article>
+    </section>
+    <section class="modal2">
+        <article>
+            <div>
+                <p th:text="${diaryDetail.nickName}"></p>
+                <p>test</p>
+            </div>
         </article>
     </section>
     <main>
@@ -110,7 +117,7 @@
             <div class="inner">
                 <div class="diary">
                     <div class="per-diary" th:each="diary : ${diaryList}">
-                        <a class="diary-link" href="#none">
+                        <a class="diary-link" href="#none" th:href="@{/board/diary/{id} (id = ${diary.id})}">
                             <article>
                                 <span></span>
                                 <span></span>

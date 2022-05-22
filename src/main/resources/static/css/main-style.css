@@ -38,13 +38,14 @@ footer {
     text-align: center; /* 내부 글자 가운데 정렬 */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* 미디어 쿼리, 일반적인 모바일 기기 기준*/
     .container {
         width: 100%;
     }
     section {
         flex-direction: column;
     }
+    /* order는 배치되는 순서를 지정한다*/
     .left {
         order: 2;
     }
