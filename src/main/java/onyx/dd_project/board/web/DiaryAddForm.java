@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -32,5 +33,8 @@ public class DiaryAddForm {
     private LocalDate occurredDate;
 
     private Boolean publicAt;
+
+    @Length(max = 50)
+    private List<String> hashtag;
 
 }

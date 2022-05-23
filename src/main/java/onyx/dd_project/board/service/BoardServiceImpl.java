@@ -8,10 +8,13 @@ import onyx.dd_project.board.domain.BoardCategory;
 import onyx.dd_project.board.web.DiaryAddForm;
 import onyx.dd_project.board.web.DiaryUpdateForm;
 import onyx.dd_project.common.util.IpManager;
+import onyx.dd_project.hashtag.domain.Hashtag;
+import onyx.dd_project.hashtag.repository.HashtagRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,6 +23,8 @@ import java.util.Optional;
 public class BoardServiceImpl implements BoardService{
 
     private final BoardRepository boardRepository;
+
+    private final HashtagRepository hashtagRepository;
 
     private final IpManager ipManager;
 
@@ -39,7 +44,26 @@ public class BoardServiceImpl implements BoardService{
         diary.setWriteDate(LocalDateTime.now());
         diary.setWriteIpAddress(ipManager.getIp());
 
-        return boardRepository.save(diary);
+
+        Board savedDiary = boardRepository.save(diary);
+
+        List<String> hashTags = diaryAddForm.getHashtag();
+
+        for (String hashTag : hashTags) {
+
+            Hashtag newHashtag = new Hashtag();
+
+            newHashtag.setName(hashTag);
+
+            hashtagRepository.save(newHashtag);
+
+
+
+        }
+
+
+
+        return savedDiary;
 
     }
 
