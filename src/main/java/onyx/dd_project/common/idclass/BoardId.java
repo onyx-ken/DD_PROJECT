@@ -11,7 +11,6 @@ import java.io.Serializable;
 @AllArgsConstructor
 @EqualsAndHashCode
 public class BoardId implements Serializable {
-    public Board board;
-    public long BoardHistoryId;
-
+    public Long board;
+    public Long BoardHistoryId;
 }
