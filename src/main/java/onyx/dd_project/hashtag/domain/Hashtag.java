@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import onyx.dd_project.board.domain.Board;
+import onyx.dd_project.board.domain.BoardHashtagR;
 import onyx.dd_project.common.domain.BaseWriteEntity;
 
 import javax.persistence.*;
@@ -30,10 +31,5 @@ public class Hashtag extends BaseWriteEntity {
 
     @Column(name = "HASHTAG_NM", length = 50)
     private String name;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "BOARD_ID")
-    @ToString.Exclude
-    private Board board;
 
 }
