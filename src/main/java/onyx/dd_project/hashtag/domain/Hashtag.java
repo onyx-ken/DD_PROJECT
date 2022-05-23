@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import onyx.dd_project.board.domain.Board;
-import onyx.dd_project.board.domain.BoardHashtagR;
 import onyx.dd_project.common.domain.BaseWriteEntity;
 
 import javax.persistence.*;

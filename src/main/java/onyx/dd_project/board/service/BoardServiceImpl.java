@@ -1,6 +1,8 @@
 package onyx.dd_project.board.service;
 
 import lombok.RequiredArgsConstructor;
+import onyx.dd_project.BoardHashtagR.BoardHashtagR;
+import onyx.dd_project.BoardHashtagR.BoardHashtagRRepository;
 import onyx.dd_project.board.domain.Board;
 import onyx.dd_project.board.domain.BoardStatus;
 import onyx.dd_project.board.repository.BoardRepository;
@@ -25,6 +27,8 @@ public class BoardServiceImpl implements BoardService{
     private final BoardRepository boardRepository;
 
     private final HashtagRepository hashtagRepository;
+
+    private final BoardHashtagRRepository boardHashtagRRepository;
 
     private final IpManager ipManager;
 
@@ -55,9 +59,14 @@ public class BoardServiceImpl implements BoardService{
 
             newHashtag.setName(hashTag);
 
-            hashtagRepository.save(newHashtag);
+            Hashtag savedHashtag = hashtagRepository.save(newHashtag);
 
+            BoardHashtagR boardHashtagR = new BoardHashtagR();
 
+            boardHashtagR.setBoard(savedDiary);
+            boardHashtagR.setHashtag(savedHashtag);
+
+            boardHashtagRRepository.save(boardHashtagR);
 
         }
 

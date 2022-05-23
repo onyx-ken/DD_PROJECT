@@ -1,9 +1,10 @@
-package onyx.dd_project.board.domain;
+package onyx.dd_project.BoardHashtagR;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import onyx.dd_project.board.domain.Board;
 import onyx.dd_project.board.idclass.BoardHashtagId;
 import onyx.dd_project.hashtag.domain.Hashtag;
 
