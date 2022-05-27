@@ -29,7 +29,7 @@ public class Board extends BaseWriteEntity {
     @Column(name = "BOARD_ID", nullable = false)
     private Long id;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     @Column(name = "BOARD_CTGRY", length = 30)
     private BoardCategory category;
 

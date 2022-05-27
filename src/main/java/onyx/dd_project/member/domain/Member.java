@@ -5,10 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -29,5 +26,9 @@ public class Member {
 
     @Column(name = "EMAIL_ADRES")
     private String emailAddress;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "STATUS")
+    private MemberRole memberRole;
 
 }
