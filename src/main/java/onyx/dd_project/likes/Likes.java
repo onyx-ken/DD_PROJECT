@@ -5,8 +5,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import onyx.dd_project.board.domain.Board;
-import onyx.dd_project.board.idclass.BoardHashtagId;
-import onyx.dd_project.hashtag.domain.Hashtag;
 import onyx.dd_project.member.domain.Member;
 
 import javax.persistence.*;
@@ -16,7 +14,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@IdClass(BoardHashtagId.class)
+@IdClass(LikesId.class)
 @Table(name = "LIKES")
 public class Likes {
 
