@@ -1,14 +1,15 @@
 package onyx.dd_project.boardHistory.domain;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import onyx.dd_project.board.domain.Board;
 import onyx.dd_project.common.idclass.BoardId;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @SequenceGenerator(
@@ -19,7 +20,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
 @Table(name = "BOARD_HISTORY")
 @IdClass(BoardId.class)
 public class BoardHistory {
@@ -48,4 +48,17 @@ public class BoardHistory {
     @Column(name = "DAY_LIKES")
     private Long dayLikes = 0L;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        BoardHistory that = (BoardHistory) o;
+        return BoardHistoryId != null && Objects.equals(BoardHistoryId, that.BoardHistoryId)
+                && board != null && Objects.equals(board, that.board);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(BoardHistoryId, board);
+    }
 }
